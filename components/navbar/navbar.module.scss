@@ -1,0 +1,101 @@
+@import '/styles/colors';
+
+.navbar{
+    position: relative;
+    background-color: $white;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem 2rem;
+    position: fixed;
+    width: 100%;
+
+    .navbar__logo{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        h3{
+            font-size: 2rem;
+        }
+    }
+
+    .navbar__search{
+        height: 35px;
+        width: 450px;
+        display: flex;
+        align-items: center;
+
+        input{
+            height: 100%;
+            width: 75%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            outline: none;
+            border: 1px solid #dddddd;
+            transition: all 0.3s ease 0s;
+            border-radius: 8px 0px 0px 8px;
+
+            &::placeholder{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                color: $dark-blue2;
+
+                opacity: 0.7;
+            }
+        }
+
+        button{
+            height: 100%;
+            background: $blue;
+            outline: none;
+            border: none;
+            width: 70px;
+            border-radius: 0px 5px 5px 0px;
+            cursor: pointer;
+            color: $white;
+            font-size: 13.97px;
+        }
+    }
+
+    .navbar__user{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        div{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            .navbar__user_img{
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            p{
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .navbar__logout{
+        position: absolute;
+        bottom: -40px;
+        right: 20px;
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+        padding: 1rem;
+        cursor: pointer;
+        font-size: .9rem;
+        color: $dark-blue;
+    }
+
+}
