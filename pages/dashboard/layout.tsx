@@ -6,7 +6,7 @@ import styles from '../../styles/layout.module.scss';
 export default function Layout({ children } : any) {
   return (
      
-      <div>
+      <>
       <Navbar />
       <div className={styles.container}>
         <div className={styles.sidebar}>
@@ -15,7 +15,7 @@ export default function Layout({ children } : any) {
       
       {children}
       </div>
-      </div>
+      </>
       
   )
 }

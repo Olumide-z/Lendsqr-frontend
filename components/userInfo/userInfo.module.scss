@@ -1,0 +1,47 @@
+@import '../../styles/colors';
+
+.userInfo{
+
+    .userInfo__content{
+
+        .userInfo__content_info{
+            margin-top: 1rem;
+
+            &:not(:last-child){
+                border-bottom: 1px solid #E5E5E5;
+            }
+            
+            h3{
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                color: $dark-blue;
+            }
+
+            .info_details{
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                grid-column-gap: 30px;
+                grid-row-gap: 25px;
+                margin: 2rem 0;
+                
+                p{
+                    color: $dark-blue2;
+                    h6{
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 14px;
+                        text-transform: uppercase;
+                        margin-bottom: .6rem;
+
+                        span{
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 19px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

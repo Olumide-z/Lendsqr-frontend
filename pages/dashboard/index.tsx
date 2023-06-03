@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   return (
     <Layout>
-      <div className={styles.dashboard}>
+      <section className={styles.dashboard}>
         <h3 className={styles.dashboard__user}>Users</h3>
         {/* Widgets */}
         <div className={styles.dashboard__widgets}>
@@ -23,7 +23,7 @@ const Dashboard = () => {
         </div>
         {/* Table */}
         <Table />
-      </div>
+      </section>
     </Layout>
   )
 }
