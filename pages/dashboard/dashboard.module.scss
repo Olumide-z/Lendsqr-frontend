@@ -1,0 +1,24 @@
+@import '/styles/colors';
+
+.dashboard{
+    background: #Fbfbfb;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 3rem 2rem;
+
+    .dashboard__user{
+        color: $dark-blue;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 1rem;
+    }
+    
+    .dashboard__widgets{
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-gap: 25px;
+    }
+}

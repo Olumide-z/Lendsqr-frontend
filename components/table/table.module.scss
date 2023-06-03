@@ -1,0 +1,102 @@
+@import '../../styles/colors';
+
+.table {
+    border-collapse: collapse;
+    background-color: #fff;
+    text-align: left;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    margin: 2rem 0;
+    width: 100%;
+
+    th{
+        padding: 1rem;
+        tr{
+            .table__head{
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 14px;
+                display: flex;
+                align-items: flex-end;
+                gap: 6px;
+                text-transform: uppercase;
+                color: $dark-blue;
+            }
+        }
+    }
+
+}
+
+.paginate{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .paginate__pageChange{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        label{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: $dark-blue;
+        }
+
+        select{
+            background: rgba(33, 63, 125, 0.1);
+            border-radius: 4px;
+            width: 80px;
+            height: 30px;
+            color: $dark-blue;
+
+            option{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+    }
+   
+    .page__icon{
+        color: $dark-blue;
+        background: rgba(33, 63, 125, 0.1);
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .page{
+        padding: 0.4rem 0.7rem;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover{
+            color: $dark-blue;
+            font-weight: 800;
+        }
+    }
+
+    .pageContainer{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        list-style: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: $dark-blue;
+    }
+
+    .paginationActive{
+        color: $dark-blue;
+        font-weight: 800;
+    }
+
+}

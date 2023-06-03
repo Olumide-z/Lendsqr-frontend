@@ -1,0 +1,22 @@
+.row{
+    font-size: 14px;
+    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+    
+    td{
+        padding: 1.5rem 1rem;
+    }
+
+    .row__td{
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 2rem;
+
+        button{
+            border: none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
