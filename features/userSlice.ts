@@ -5,13 +5,13 @@ import axios from "axios"
 type InitialState = {
     users: UserData[],
     loading: boolean,
-    error: string
+    error: string,
 }
 
 const initialState: InitialState = {
     loading: false,
     users: [],
-    error: ''
+    error: '',
 }
 
 export const fetchUsers = createAsyncThunk('user/fetchUsers', async () => {
@@ -22,7 +22,8 @@ export const fetchUsers = createAsyncThunk('user/fetchUsers', async () => {
 const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {},
+    reducers: {
+    },
     extraReducers: builder => {
         builder.addCase(fetchUsers.pending, state => {
           state.loading = true
@@ -39,5 +40,6 @@ const userSlice = createSlice({
         })
       }
 })
+
 
 export default userSlice.reducer
