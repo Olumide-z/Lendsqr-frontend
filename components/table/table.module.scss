@@ -1,32 +1,47 @@
 @import '../../styles/colors';
+@import '../../styles/breakpoints';
 
-.table {
-    border-collapse: collapse;
-    background-color: #fff;
-    text-align: left;
-    border: 1px solid rgba(33, 63, 125, 0.06);
-    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-    border-radius: 4px;
-    margin: 2rem 0;
-    width: 100%;
+.table__container{
+    overflow-x: auto;
 
-    th{
-        padding: 1rem;
-        tr{
-            .table__head{
-                font-style: normal;
-                font-weight: 600;
-                font-size: 12px;
-                line-height: 14px;
-                display: flex;
-                align-items: flex-end;
-                gap: 6px;
-                text-transform: uppercase;
-                color: $dark-blue;
+
+    // @include xl{
+    //     .table__container {
+    //         white-space: nowrap;
+    //       }
+    // }
+
+    .table {
+        border-collapse: collapse;
+        position: relative;
+        background-color: #fff;
+        text-align: left;
+        border: 1px solid rgba(33, 63, 125, 0.06);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+        margin: 2rem 0;
+        width: 100%;
+        // height: 100%;
+    
+        th{
+            padding: 1rem;
+            tr{
+                .table__head{
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 14px;
+                    display: flex;
+                    align-items: flex-end;
+                    gap: 6px;
+                    text-transform: uppercase;
+                    color: $dark-blue;
+                }
             }
         }
+    
     }
-
+    
 }
 
 .paginate{

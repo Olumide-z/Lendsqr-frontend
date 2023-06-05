@@ -8,10 +8,12 @@ import { columns } from './data';
 import styles from './table.module.scss';
 import  Body  from '../tableBody/Body'
 import ReactPaginate from 'react-paginate';
+import Filter from '../filter/Filter';
 
 const Table = () => {
   const [pageNumber, setPageNumber] = useState(0);
   const [usersPerPage, setUsersPerPage] = useState(10);
+  const [filterDropdown, setFilterDropdown] = useState(false);
 
   const pagesVisted = pageNumber * usersPerPage;
 
@@ -41,23 +43,36 @@ const Table = () => {
         setPageNumber(0); // Reset to the first page when changing items per page
       };
 
+      // handle toggle filter dropdown
+      const toggleFilterDropdown = () => {
+        setFilterDropdown(prev => !prev);
+      }
+
   return (
     <>
+    <div className={styles.table__container}>
       <table className={styles.table}>
         <thead>
         {columns.map((column) =>(
           <th key={column.id}>
             <tr>
-              <p className={styles.table__head}>
+              <p className={styles.table__head} onClick={toggleFilterDropdown}>
                 {column.name}
                 <Image src={bar} alt='bar' width={16} height={10.67}/>
               </p>
             </tr>
           </th>
         ))}
+        {/* Filter dropdown */}
+        {
+          filterDropdown && (
+            <Filter />
+          )
+        }
         </thead>
         <tbody>{displayUsers}</tbody>
       </table>
+    </div>
 
       {/* Pagination */}
       <div className={styles.paginate}>

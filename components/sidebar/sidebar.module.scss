@@ -1,4 +1,6 @@
 @import '/styles/colors';
+@import '/styles/breakpoints';
+
 
 .sidebar{
     padding: 2rem;
@@ -11,6 +13,12 @@
         margin-top: .5rem;
     }
 
+    @include xl{
+        .sidebar__org{
+            display: none;
+        }
+    }
+
     .sidebar__dash{
         display: flex;
         align-items: center;
@@ -20,6 +28,10 @@
         font-size: 16px;
         line-height: 19px;
         color: $dark-blue;
+
+        @include xl{
+            display: none;
+        }
     }
 
     .sidebar__items{
@@ -32,6 +44,12 @@
             line-height: 14px;
             color: $dark-blue2;
             margin-bottom: 10px;
+        }
+
+        @include xl{
+            h4{
+                 display: none;
+            }
         }
 
         ul{
@@ -50,13 +68,26 @@
                     color: $dark-blue;
                 }
 
-                @media screen and (max-width: 1200px){
+                @include xl{
                     p{
-                        display: none;
+                         display: none;
                     }
-                }
-                
 
+                    span{
+                        font-size: 2rem;
+                    }
+                }   
+            }
+            @include xl{
+                li{
+                    margin-bottom: 1.8rem;
+                }
+            }
+        }
+        @include xl{
+            ul{
+                margin-bottom: 3rem;
+                border-bottom: 1px solid $dark-blue;
             }
         }
     }
@@ -64,6 +95,10 @@
     .sidebar__logout{
         border-top: 1px solid $dark-blue;
         margin-top: 2rem;
+
+        @include xl{
+            border: none;
+        }
 
         p{
             display: flex;
@@ -77,9 +112,12 @@
             line-height: 19px;
             color: $dark-blue;
         }
-        @media screen and (max-width: 1200px){
+        @include xl{
             p{
-                display: none;
+                font-size: 2rem;
+                 span{
+                    display: none;
+                 }
             }
         }
     }

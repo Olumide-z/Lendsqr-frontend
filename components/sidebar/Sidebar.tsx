@@ -51,7 +51,7 @@ const Sidebar = () => {
       </div>
       {/* Logout */}
       <div className={styles.sidebar__logout}>
-        <p><span><MdLogout/></span>Logout</p>
+        <p><MdLogout/><span>Logout</span></p>
       </div>
 
     </div>

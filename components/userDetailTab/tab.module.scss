@@ -1,10 +1,12 @@
 @import '../../styles/colors';
+@import '../../styles/breakpoints';
 
 .tab{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 1.5rem;
+    
 
     .tabs, .active-tabs{
         padding: 15px;
@@ -21,5 +23,13 @@
     .active-tabs{
         border-bottom: 2px solid $blue;
         color: $blue;
+    }
+}
+
+@include md{
+    .tab{
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
     }
 }

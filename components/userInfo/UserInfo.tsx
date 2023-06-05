@@ -17,7 +17,12 @@ const UserInfo = ({ user } : InfoProps) => {
                     <div className={styles['info_details']}>
                         <p><h6>FULL NAME</h6><span>{user.profile.firstName} {user.profile.lastName}</span></p>
                         <p><h6>Phone number</h6><span>+{user.profile.phoneNumber.slice(0,12)}</span></p>
-                        <p><h6>email address</h6><span>{user.email}</span></p>
+                        <p><h6>email address</h6>
+                            <span>{user?.email.length <= 21
+                                ? user?.email    
+                                : `${user?.email.slice(0,21)}...`
+                            }</span>
+                        </p>
                         <p><h6>bvn</h6><span>{user.profile.bvn}</span></p>
                         <p><h6>Gender</h6><span>{user.profile.gender}</span></p>
                         <p><h6>Martial status</h6><span>Single</span></p>
@@ -33,7 +38,14 @@ const UserInfo = ({ user } : InfoProps) => {
                         <p><h6>EMPLOYMENT STATUS</h6><span>{user.education.employmentStatus}</span></p>
                         <p><h6>sector of employment</h6><span>{user.education.sector}</span></p>
                         <p><h6>duration of employment</h6><span>{user.education.duration}</span></p>
-                        <p><h6>office mail</h6><span>{user.education.officeEmail}</span></p>
+                        <p><h6>office mail</h6>
+                            <span>
+                                {user?.education.officeEmail.length <= 21
+                                    ? user?.education.officeEmail    
+                                    : `${user?.education.officeEmail.slice(0,21)}...`
+                                }
+                            </span>
+                        </p>
                         <p><h6>Monthly income</h6><span>N{user.education.monthlyIncome[1]} - N{user.education.monthlyIncome[0]}</span></p>
                         <p><h6>Loan repayment</h6><span>{user.education.loanRepayment}</span></p>
                     </div>

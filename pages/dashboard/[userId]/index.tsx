@@ -7,12 +7,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Tab from '@/components/userDetailTab/Tab';
 import UserInfo from '@/components/userInfo/UserInfo';
+import { useRouter } from 'next/router';
 
 interface UserProps {
     user: SingleUser
 }
 
 const UserDetails = ({ user } : UserProps) => {
+    const router = useRouter()
+
+    if (router.isFallback) {
+        return <div>Loading...</div>
+    }
     
     const [toggleTab, setToggleTab] = useState(1);
     // table toggle
@@ -115,7 +121,7 @@ export async function getStaticProps(context :  any) {
         props : {
             user: data
         },
-        revalidate: 10
+        revalidate: 5 * 60
     }
 }
 
