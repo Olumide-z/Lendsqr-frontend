@@ -2,22 +2,32 @@ import styles from './navbar.module.scss';
 import {useState} from 'react'
 
 import Image from "next/image"
-import logo from '/public/assets/images/logo.png';
 import profile from '/public/assets/images/profile.png';
-import logo2 from '/public/assets/images/lendsqr.svg';
+
 import { BiSearch } from 'react-icons/bi';
 import {IoMdArrowDropdown} from 'react-icons/io';
 import { BsBell } from 'react-icons/bs';
+import Logo from '../logo/Logo';
+import { useUserAuth } from '@/auth/AuthContext';
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
     const [profileIsClicked, setProfileIsClicked] = useState<boolean>(false)
+    const { logOut, user } = useUserAuth();
+    const router = useRouter();
+
+    const handleLogout = async () => {
+        try{
+            await logOut()
+            router.push('/')
+        }catch(err: any){
+            console.log(err.message)
+        }
+    }
   return (
     <div className={styles.navbar}>
         {/* Logo */}
-        <div className={styles.navbar__logo}>
-            <Image src={logo} alt='logo image' width={20.63} height={20.84}/>
-            <Image src={logo2} alt='logo' width={115.37} height={30}/>
-        </div>
+        <Logo />
         {/* Search */}
         <div className={styles.navbar__search}>
             <input type="text" placeholder='Search for anything'/>
@@ -35,12 +45,12 @@ const Navbar = () => {
                 height={48}
                 className={styles.navbar__user_img}
                 />
-                <p>Adedeji <span><IoMdArrowDropdown/></span></p>
+                <p>{user.displayName ? user.displayName : user.email} <span><IoMdArrowDropdown/></span></p>
             </div>
         </div>
         {/* Logout */}
         {profileIsClicked && (
-            <div className={styles.navbar__logout}>
+            <div className={styles.navbar__logout} onClick={handleLogout}>
                 <p>Logout</p>
             </div>
         )}

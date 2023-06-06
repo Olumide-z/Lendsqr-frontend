@@ -9,11 +9,16 @@ import styles from './table.module.scss';
 import  Body  from '../tableBody/Body'
 import ReactPaginate from 'react-paginate';
 import Filter from '../filter/Filter';
+import { UserData } from '@/types/userData';
 
 const Table = () => {
   const [pageNumber, setPageNumber] = useState(0);
   const [usersPerPage, setUsersPerPage] = useState(10);
   const [filterDropdown, setFilterDropdown] = useState(false);
+  const [usernameFilter, setUsernameFilter] = useState('');
+const [emailFilter, setEmailFilter] = useState('');
+
+
 
   const pagesVisted = pageNumber * usersPerPage;
 
@@ -31,12 +36,14 @@ const Table = () => {
     setPageNumber(selected);
   };
 
-  const displayUsers = user?.users.slice(pagesVisted, (pagesVisted + 1 )* usersPerPage)
-      .map((user) => {
-          return (
-            <Body user={user} />
-          )
-      });
+  const filteredUsers = user?.users.filter((user : UserData) => {
+    const usernameMatch = user.userName.toLowerCase().includes(usernameFilter.toLowerCase());
+    const emailMatch = user.email.toLowerCase().includes(emailFilter.toLowerCase());
+    return usernameMatch && emailMatch;
+  });
+
+  const displayUsers = filteredUsers?.slice(pagesVisted, (pagesVisted + 1) * usersPerPage)
+  .map((user: UserData) => <Body user={user} />);
 
       const handleItemsPerPageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setUsersPerPage(Number(e.target.value));
@@ -47,6 +54,12 @@ const Table = () => {
       const toggleFilterDropdown = () => {
         setFilterDropdown(prev => !prev);
       }
+
+      const handleFilter = (username: string, email: string) => {
+        setUsernameFilter(username);
+        setEmailFilter(email);
+        setPageNumber(0);
+      };
 
   return (
     <>
@@ -66,7 +79,9 @@ const Table = () => {
         {/* Filter dropdown */}
         {
           filterDropdown && (
-            <Filter />
+            <Filter 
+              onFilter={handleFilter}       
+            />
           )
         }
         </thead>

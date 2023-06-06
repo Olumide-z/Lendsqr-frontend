@@ -6,12 +6,18 @@ type InitialState = {
     users: UserData[],
     loading: boolean,
     error: string,
+    userEmail: string,
+    userPassword: string,
+    userName: string
 }
 
 const initialState: InitialState = {
     loading: false,
     users: [],
     error: '',
+    userEmail: '',
+    userName: '',
+    userPassword: ''
 }
 
 export const fetchUsers = createAsyncThunk('user/fetchUsers', async () => {
@@ -23,6 +29,17 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
+      setEmail: (state, action) => {
+        state.userEmail = action.payload
+      },
+
+      setPassword: (state, action) => {
+        state.userPassword = action.payload
+      },
+
+      setUsername: (state, action) => {
+        state.userName = action.payload
+      },
     },
     extraReducers: builder => {
         builder.addCase(fetchUsers.pending, state => {
@@ -41,5 +58,5 @@ const userSlice = createSlice({
       }
 })
 
-
+export const { setEmail, setPassword, setUsername } = userSlice.actions;
 export default userSlice.reducer

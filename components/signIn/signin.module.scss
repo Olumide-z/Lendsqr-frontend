@@ -1,0 +1,22 @@
+@import '../../styles/colors';
+@import '../../styles/breakpoints';
+
+.signinBtn{
+        border-radius: 8px;
+        background: $blue;
+        height: 48px;
+        width: 447px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $white;
+        border: none;
+        cursor: pointer;
+
+        @include md{
+                width: 200px;
+        }
+}

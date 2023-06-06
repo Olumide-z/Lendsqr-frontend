@@ -1,0 +1,54 @@
+@import 'colors';
+@import 'breakpoints';
+
+.homeLayout{
+    display: flex;
+    min-height: 100vh;
+
+    @include xl {
+        .homeLayout__left{
+            display: none;
+        }
+    }
+
+    .homeLayout__left{
+        flex: .5;
+        padding: 4em 3rem;
+        
+
+        .homeLayout__left_imageContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 4rem;
+
+            .homeLayout__left_image{
+              
+            }
+        }
+    }
+
+    @include xl{
+        .homeLayout__right{
+            flex: 1 !important;
+        }
+    }
+
+    @include md{
+        .homeLayout__right{
+            padding: 0 2rem !important;
+        }
+    }
+
+    .homeLayout__right{
+        flex: .5;
+        background: #FFFFFF;
+        box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 3rem;
+    }
+}
+
