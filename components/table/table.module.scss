@@ -122,24 +122,24 @@
 
 @include xl{
     .table__container {
-       width: 950px;
+       width: 950px !important;
       }
 }
 
 @include lg{
     .table__container {
-       width: 750px;
+       width: 750px !important;
       }
 }
 
 @include md{
     .table__container {
-       width: 500px;
+       width: 500px !important;
       }
 }
 
 @include md{
     .table__container {
-       width: 350px;
+       width: 350px !important;
       }
 }
