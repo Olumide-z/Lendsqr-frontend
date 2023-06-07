@@ -52,6 +52,12 @@
                     flex-wrap: wrap;
                 }
             }
+
+            @include lg{
+                .info_details{
+                    gap: 4rem;
+                }
+            }
                 
         }
     }

@@ -4,7 +4,7 @@
 
 .sidebar{
     padding: 2rem;
-    min-height: 1500px;
+    
 
     .sidebar__org{
         display: flex;
@@ -120,5 +120,11 @@
                  }
             }
         }
+    }
+}
+
+@include md{
+    .sidebar{
+        padding: 1rem !important;
     }
 }

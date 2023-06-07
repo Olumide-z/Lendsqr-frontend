@@ -1,7 +1,8 @@
 @import '/styles/colors';
+@import '/styles/breakpoints';
 
 .widget{
-    // width: 240px;
+   
     height: 160px;
     background: $white;
     border: 1px solid rgba(33, 63, 125, 0.06);
@@ -54,5 +55,11 @@
         line-height: 28px;
         color: $dark-blue;
         margin-top: .8rem;
+    }
+}
+
+@include lg{
+    .widget{
+        width: 240px;
     }
 }

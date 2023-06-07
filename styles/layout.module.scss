@@ -9,7 +9,7 @@
         width: 283px;
         background: $white;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
-        height: fit-content;
+        min-height: fit-content;
 
         @include xl{
             width: fit-content;

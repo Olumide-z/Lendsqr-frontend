@@ -6,13 +6,6 @@
     z-index: 1;
 
 
-    @include xl{
-        .table__container {
-            white-space: nowrap;
-            width: 100%;
-          }
-    }
-
     .table {
         border-collapse: collapse;
         position: relative;
@@ -124,4 +117,29 @@
         font-weight: 800;
     }
 
+}
+
+
+@include xl{
+    .table__container {
+       width: 950px;
+      }
+}
+
+@include lg{
+    .table__container {
+       width: 750px;
+      }
+}
+
+@include md{
+    .table__container {
+       width: 500px;
+      }
+}
+
+@include md{
+    .table__container {
+       width: 350px;
+      }
 }

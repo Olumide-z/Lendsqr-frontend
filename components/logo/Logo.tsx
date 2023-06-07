@@ -8,7 +8,7 @@ const Logo = () => {
   return (
     <div className={styles.logo}>
         <Image src={logo} alt='logo image' width={20.63} height={20.84}/>
-        <Image src={logo2} alt='logo' width={115.37} height={30}/>
+        <Image src={logo2} alt='logo' width={115.37} height={30} className={styles.logo__img2}/>
     </div>
   )
 }

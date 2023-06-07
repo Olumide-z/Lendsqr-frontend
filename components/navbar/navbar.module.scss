@@ -63,6 +63,12 @@
         align-items: center;
         gap: 2rem;
 
+        @include lg{
+            a{
+                display: none;
+            }
+        }
+
         div{
             display: flex;
             align-items: center;

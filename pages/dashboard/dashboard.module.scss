@@ -5,7 +5,8 @@
     background: #Fbfbfb;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    width: 100%;
+    
     padding: 3rem 2rem;
 
     .dashboard__user{
@@ -23,9 +24,11 @@
         grid-gap: 25px;
     }
 
-    @include md{
+    @include lg{
         .dashboard__widgets{
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
     }
 }

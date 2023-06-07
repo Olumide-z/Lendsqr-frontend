@@ -20,6 +20,13 @@
         text-align: center;
     }
 
+    @include md{
+        .tabs, .active-tabs{
+            padding: 13px;
+            font-size: 14px;
+        }
+    }
+
     .active-tabs{
         border-bottom: 2px solid $blue;
         color: $blue;

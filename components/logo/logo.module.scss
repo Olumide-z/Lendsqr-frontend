@@ -1,5 +1,14 @@
+@import '../../styles/breakpoints';
+
 .logo{
     display: flex;
     align-items: center;
     gap: 5px;
+
+    @include lg{
+        .logo__img2{
+            display: none;
+        }
+    }
 }
+

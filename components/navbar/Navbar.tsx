@@ -10,6 +10,7 @@ import { BsBell } from 'react-icons/bs';
 import Logo from '../logo/Logo';
 import { useUserAuth } from '@/auth/AuthContext';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Navbar = () => {
     const [profileIsClicked, setProfileIsClicked] = useState<boolean>(false)
@@ -27,7 +28,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
         {/* Logo */}
-        <Logo />
+        <Link href='/dashboard'><Logo /></Link>
         {/* Search */}
         <div className={styles.navbar__search}>
             <input type="text" placeholder='Search for anything'/>
@@ -45,7 +46,7 @@ const Navbar = () => {
                 height={48}
                 className={styles.navbar__user_img}
                 />
-                <p>{user.displayName ? user.displayName : user.email} <span><IoMdArrowDropdown/></span></p>
+                <p>{user.email} <span><IoMdArrowDropdown/></span></p>
             </div>
         </div>
         {/* Logout */}

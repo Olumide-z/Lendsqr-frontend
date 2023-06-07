@@ -22,6 +22,12 @@
                 font-size: 16px;
                 line-height: 19px;
             }
+
+            @include md{
+                span{
+                    font-size: 14px;
+                }
+            }
         }
     }
 
@@ -38,6 +44,12 @@
             font-size: 24px;
             line-height: 28px;
             color: $dark-blue;
+        }
+
+        @include md{
+            h2{
+                font-size: 18px;
+            }
         }
 
         div{
@@ -58,6 +70,14 @@
                 background-color: transparent;
                 transition: all 0.3s;
                 cursor: pointer;
+            }
+
+            @include md{
+                button{
+                    width: 120px !important;
+                    height: 30px !important;
+                    font-size: 10px !important;
+                }
             }
 
             .user__blacklist{
@@ -93,7 +113,15 @@
         .user__details_tabs{
            display: flex;
            align-items: center;
+           flex-wrap: wrap;
            gap: 1rem;
+
+           @include md{
+            .user__details_image{
+                width: 70px;
+                height: 70px;
+            }
+           }
 
             .user__details_image{
                 border-radius: 50%;
@@ -101,6 +129,12 @@
             }
 
             .user__details_user{
+
+                @include lg{
+                    p{
+                        font-size: 16px !important;
+                    }
+                }
 
                 p{
                     font-weight: 500;
@@ -114,6 +148,12 @@
                     font-size: 14px;
                     line-height: 16px;
                     color: $dark-blue2;
+                }
+            }
+
+            @include lg{
+                .user__details_userTier{
+                    display: none !important;
                 }
             }
 
@@ -132,7 +172,21 @@
                 }
             }
 
+            @include lg{
+              .user__details_userBank{
+                border-left: 2px solid #e5e5e5;
+                padding-left: .8rem;
+              }
+            }
+
             .user__details_userBank{
+
+                @include lg{
+                    p{
+                        font-size: 16px !important;
+                    }
+                }
+
                 p{
                     font-weight: 500;
                     font-size: 22px;
@@ -163,6 +217,7 @@
         border-radius: 4px;
     }
 
+   
     .active-content{
         display: block;
     }
