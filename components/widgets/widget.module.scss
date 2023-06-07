@@ -60,12 +60,12 @@
 
 @include lg{
     .widget{
-        width: 240px;
+        width: 300px;
     }
 }
 
 @include md{
     .widget{
-        width: 300px;
+        width: 90%;
     }
 }

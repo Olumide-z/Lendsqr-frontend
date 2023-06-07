@@ -117,6 +117,13 @@ const UserDetails = ({ user } : UserProps) => {
 
 export default UserDetails
 
+export async function getStaticPaths() {
+    return {
+        paths: [{ params: { userId: '1' }}],
+        fallback: true
+    }
+}
+
 // Fetching data using GetStaticProps
 export async function getStaticProps(context :  any) {
     const { params } = context
@@ -131,12 +138,5 @@ export async function getStaticProps(context :  any) {
             user: data
         },
         revalidate: 5 * 60
-    }
-}
-
-export async function getStaticPaths() {
-    return {
-        paths: [{ params: { userId: '1' }}],
-        fallback: true
     }
 }

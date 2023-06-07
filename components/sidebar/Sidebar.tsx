@@ -5,8 +5,22 @@ import {IoMdArrowDropdown} from 'react-icons/io';
 import { MdLogout } from 'react-icons/md';
 import {ImHome} from 'react-icons/im';
 import { businesses, customers, settings } from './data';
+import { useUserAuth } from '@/auth/AuthContext';
+import { useRouter } from 'next/router';
 
 const Sidebar = () => {
+  const { logOut } = useUserAuth();
+    const router = useRouter();
+
+    const handleLogout = async () => {
+        try{
+            await logOut()
+            router.push('/')
+        }catch(err: any){
+            console.log(err.message)
+        }
+    }
+
   return (
     <div className={styles.sidebar}>
       <p className={styles.sidebar__org}>
@@ -51,7 +65,7 @@ const Sidebar = () => {
       </div>
       {/* Logout */}
       <div className={styles.sidebar__logout}>
-        <p><MdLogout/><span>Logout</span></p>
+        <p onClick={handleLogout}><MdLogout/><span>Logout</span></p>
       </div>
 
     </div>
