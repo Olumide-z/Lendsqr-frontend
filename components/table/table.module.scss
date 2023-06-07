@@ -5,7 +5,6 @@
     overflow-x: auto;
     z-index: 1;
 
-
     .table {
         border-collapse: collapse;
         position: relative;
@@ -16,7 +15,7 @@
         border-radius: 4px;
         margin: 2rem 0;
         width: 100%;
-        // height: 100%;
+     
     
         th{
             padding: 1rem;
@@ -51,6 +50,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
 
     .paginate__pageChange{
         display: flex;
@@ -121,9 +122,9 @@
 
 
 @include xl{
-    .table__container {
-       width: 950px !important;
-      }
+    .table__container{
+    width: 950px !important;
+}
 }
 
 @include lg{
@@ -138,8 +139,14 @@
       }
 }
 
-@include md{
+@include sm{
     .table__container {
        width: 350px !important;
       }
+}
+
+@media screen and (max-width: 350px){
+    .table__container{
+        width: 300px !important;
+    }
 }

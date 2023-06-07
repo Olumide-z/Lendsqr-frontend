@@ -5,6 +5,7 @@ $breakpoints: (
     'xl': 1200px
 );
 
+
 @mixin sm {
     @media (max-width: map-get($breakpoints, 'sm')) {
         @content;

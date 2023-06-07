@@ -75,6 +75,13 @@
             gap: 10px;
             cursor: pointer;
 
+            @include sm{
+                .navbar__user_img{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
             .navbar__user_img{
                 border-radius: 50%;
                 object-fit: cover;
@@ -84,6 +91,7 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
+                font-size: .9rem;
             }
         }
     }

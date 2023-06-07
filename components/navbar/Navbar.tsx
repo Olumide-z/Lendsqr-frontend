@@ -15,6 +15,7 @@ import Link from 'next/link';
 const Navbar = () => {
     const [profileIsClicked, setProfileIsClicked] = useState<boolean>(false)
     const { logOut, user } = useUserAuth();
+    console.log(user)
     const router = useRouter();
 
     const handleLogout = async () => {
@@ -40,7 +41,7 @@ const Navbar = () => {
             <p><BsBell /></p>
             <div onClick={() => setProfileIsClicked((prev) => !prev)}>
                 <Image 
-                src={profile} 
+                src={user?.photoUrl ? user?.photoUrl : profile} 
                 alt='profile image' 
                 width={48} 
                 height={48}

@@ -63,3 +63,9 @@
         width: 240px;
     }
 }
+
+@include md{
+    .widget{
+        width: 300px;
+    }
+}

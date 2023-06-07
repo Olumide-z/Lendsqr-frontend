@@ -40,6 +40,12 @@
         }
     }
 
+    @include sm{
+        .homeLayout__right{
+            padding: 0 1rem !important;
+        }
+    }
+
     .homeLayout__right{
         flex: .5;
         background: #FFFFFF;
